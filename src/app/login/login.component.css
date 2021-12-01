@@ -1,0 +1,25 @@
+.image-section{
+    background-color: #fcfcfc;
+}
+.image-style{
+    margin-top:23px;
+}
+.login-panel{
+    margin-top:100px;
+     /* margin-left:4px; */
+    /* margin-right:4px; */
+    margin-bottom:20px; 
+    padding-left: 110px;
+    padding-right: 95px;
+}
+.mat-form-field {
+    width: 155px;
+    margin-right: 10px;
+}
+
+.input-field {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 5px;
+}

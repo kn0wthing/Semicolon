@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="offset-4 col-4">
+        <div class="form-group">
+            <input type="text" class="form-control"  placeholder="Enter Patient ID" [(ngModel)]="patientId">
+        </div>
+    </div>
+    <div class="offset-4 col-4">
+        <div class="form-group">
+            <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="report_type">
+                <option>Blood Reports</option>
+                <option>Urine Reports</option>
+            </select>
+        </div>
+    </div>
+    <div class="offset-4 col-4">
+        <div class="form-group">
+            <input type="file" name="file" id="file" (change)="onFileChanged($event)" />
+        </div>
+    </div>
+    <div class="offset-4 col-4">
+        <button (click)="onUpload()" class="btn btn-primary" style="width:100%">Upload</button>
+    </div>
+    <div *ngIf="success" class="offset-4 col-4 mt-4">
+       <span class="text-success text-center">Reports added successfully</span>
+    </div>
+
+    
+</div>
+<div *ngIf="isLoading" class="loading"></div>

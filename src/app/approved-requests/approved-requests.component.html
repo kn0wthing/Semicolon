@@ -1,0 +1,43 @@
+<table mat-table style="width:98%; margin:10px;" [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <ng-container matColumnDef="patientId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Patient ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.patient.patientId}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.patient.name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="sex">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender </th>
+      <td mat-cell *matCellDef="let element"> {{element.patient.sex}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.patient.email}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="contact">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact </th>
+        <td mat-cell *matCellDef="let element"> {{element.patient.contact}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="photo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> User Photo </th>
+      <td mat-cell *matCellDef="let element"> <a href="https://covid-management-api.us-e2.cloudhub.io/images/{{element.patient.patientId}}.jpg">Photo</a> </td>
+    </ng-container>
+  
+      <ng-container matColumnDef="score">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
+        <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
+  
+    <div *ngIf="isLoading" class="loading"></div>
