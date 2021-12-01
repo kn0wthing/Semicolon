@@ -1,0 +1,91 @@
+<div class="container-fluid layout">
+  <div class="row pt-2">
+    <div class="col-8">
+        <h5 style="font-weight: bold;    padding-left: 12px;" class="mt-3 animate__animated animate__slideInDown animate__delay-2s">
+            Hi {{ userName }}
+        </h5>
+    </div>
+    <div class="col-4">
+        <div class="text-right mt-2 mr-2">
+            <mat-icon class="m-1" aria-hidden="false" (click)="refresh()">cached</mat-icon>
+            <mat-icon class="m-1" aria-hidden="false" (click)="logout()">exit_to_app</mat-icon>
+          </div>
+    </div>
+  </div>
+    
+  <div class="main-panel pr-2 pl-2 pb-2">
+   
+
+    <h6 class="animate__animated animate__slideInDown animate__delay-2s greet-msg"
+      *ngIf="report_status?.length != 2">
+      Please upload your required medical reports to apply for vaccination
+    </h6>
+
+    <h6 class="animate__animated animate__slideInDown animate__delay-2s greet-msg"
+      *ngIf="report_status?.length == 2">
+      Here are the reports uploaded by you!
+    </h6>
+    
+     <!--Uncomment Following Code-->
+     <div class="row mt-4">
+      <div class="col-6">
+        <div class="report-card p-2">
+            <input #b_file type="file" name="b_file" id="b_file" (change)="onFileChanged($event,'Blood Report')"
+          style="display: none" />
+        <img src="../../../assets/B_Report.png" width="70" [ngClass]="{'grey-img': (report_status[0]?.reportType != 'Blood Report' || count == 1)}"
+        style="display: block; margin: auto; margin-top: 0.5rem;" (click)="b_file.click()">
+        </div>
+      </div>
+      <div class="col-6 ">
+        <div class="report-card p-2">
+            <input #u_file type="file" name="u_file" id="u_file" (change)="onFileChanged($event, 'Urine Report')"
+            style="display: none" />
+          <img src="../../../assets/U_Report.png" width="70" [ngClass]="{'grey-img': (report_status[1]?.reportType != 'Urine Report' || count == 2)}"
+          style="display: block; margin: auto; margin-top: 0.5rem;" (click)="u_file.click()">
+        </div>
+      </div>
+    </div>
+
+     <!-- <div class="row">
+      <div class="col-6">
+        <input #b_file type="file" name="b_file" id="b_file" (change)="onFileChanged($event,'Blood Report')"
+          style="display: none" />
+        <img src="../../../assets/B_Report.png" [ngClass]="{'grey-img': report_status[0]?.reportType != 'Blood Report'}" (click)="b_file.click()">
+      </div>
+      <div class="col-6">
+        <input #u_file type="file" name="u_file" id="u_file" (change)="onFileChanged($event, 'Urine Report')"
+          style="display: none" />
+        <img src="../../../assets/U_Report.png" [ngClass]="{'grey-img': report_status[1]?.reportType != 'Urine Report'}" (click)="u_file.click()">
+      </div>
+    </div> -->
+
+    <h5 class="title" style="margin-top: 2rem;">My Application Status</h5>
+  
+
+    <hr>
+
+    <img *ngIf="vaccine_status == 'No Request Received' || vaccine_status == 'REPORT_REJECTED' " src="../../../assets/apply.png" (click)="requestVaccination()">
+    <img *ngIf="vaccine_status == 'REQUESTED' || vaccine_status =='INITIATED' || vaccine_status =='REPORT_APPROVED'" src="../../../assets/processing.png">
+    <img *ngIf="vaccine_status == 'REJECTED' || vaccine_status == 'REPORT_REJECTED' " src="../../../assets/rejected.png">
+    <img *ngIf="vaccine_status == 'APPROVED'" src="../../../assets/approved.png" [routerLink]="['/approved']">
+  <br>
+
+    <h5 class="title mt-4">COVID Cases near me</h5>
+    <hr>
+    <div class="text-center ">
+      <apx-chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [xaxis]="chartOptions.xaxis"
+        [stroke]="chartOptions.stroke"
+        [tooltip]="chartOptions.tooltip"
+        [dataLabels]="chartOptions.dataLabels"
+      ></apx-chart>
+    </div>
+    <img src="../../../assets/Home-Banner1.png"/>
+    <!-- <img src="../../../assets/graph.png" /> -->
+    
+
+  </div>
+</div>
+<div *ngIf="isLoading" class="loading"></div>

@@ -1,0 +1,31 @@
+<div style="max-height:100vh; overflow: auto">
+<div style="width:100%;">
+    <app-webcam  (pictureTaken)="handleImage($event)"></app-webcam>
+</div>
+<div class="row text-center">
+    <div class="snapshot" *ngIf="webcamImage && !apifetched"> 
+        <img [src]="webcamImage.imageAsDataUrl" download="./Images/currentuser.jpeg" width="400"
+            height="400" />
+    </div>
+    <div class="snapshot" *ngIf="apifetched">
+        <img [src]="imageUrl" width="400" height="400" />
+    </div>
+</div>
+<div style="width:100%;">
+    <div class="snapshot" *ngIf="apifetched">
+        <img [src]="imageUrl" width="400" height="400" />
+    </div>
+</div>
+<h4>{{response}}</h4>
+<div class="row">
+    <div class="col">
+        <button style="margin: 5px; min-width:140px;" *ngIf="webcamImage" type="submit" class="btn btn-primary" (click)="verifyUser()">Verify Me</button><br>
+    </div>
+    <div class="col">
+        <button style="margin: 5px; min-width:140px;" *ngIf="webcamImage" type="submit" class="btn btn-secondary" (click)="reset()">Reset</button>
+    </div>
+</div>
+</div>
+
+
+<div *ngIf="isLoading" class="loading"></div>

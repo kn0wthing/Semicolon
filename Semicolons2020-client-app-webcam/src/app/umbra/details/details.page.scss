@@ -1,0 +1,40 @@
+ 
+  .resource-section {
+    box-shadow: 2px 2px 5px -1px rgba(90, 89, 89, 0.2);
+    padding: 15px;
+    border-top: 1px solid #f9f9f9;
+    border-radius: 8px;
+    background-color: #f4f5f7;
+  }
+  
+  .resource-details {
+    font-size:12px;
+  }
+
+  .more-resource-section {
+    box-shadow: 2px 2px 5px -1px rgba(90, 89, 89, 0.2);
+    padding: 5px;
+    border-top: 1px solid #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #eae1e1;
+    background-color: #f4f5f7;
+  }
+
+  .btn-add {
+    color: #204486;
+    border-color: #204486;
+    border-radius: 20px;
+    background-color: #fff !important;
+    min-width: 85px;
+    margin-top: 7px;
+    padding: 3px;
+  }
+  
+  .img-cart {
+    width: 35px;
+    height: 35px;
+    position: fixed;
+    right: 15px;
+  }
+  

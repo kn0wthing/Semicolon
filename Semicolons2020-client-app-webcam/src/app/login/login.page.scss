@@ -1,0 +1,40 @@
+.login-panel {
+    background-color: #fff;
+    height: 100vh;
+}
+
+.panel-top {
+    // height: 30vh;
+    // position: static;
+    margin-top: 7rem;
+    width: 70%;
+}
+
+.login-content {
+    background-image: url('../../assets/login-bottom.png');
+    max-height: 80vh;
+    overflow: auto;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 355px auto;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+@media screen and (max-height: 430px) {
+    .login-content {
+        background-image: none;
+    }
+}
+
+.text-center{
+    label{
+        font-size: 0.8rem;
+    }
+}
+
+.impulse-logo{
+    display: block;
+    margin: auto;
+}
+

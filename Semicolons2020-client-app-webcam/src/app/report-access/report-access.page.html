@@ -1,0 +1,13 @@
+<div class="report-access">
+    <img src="../../../assets/Hospital.jpg"/>
+    <br>
+    <h3 style="text-align: center">Apollo Hospital, Indore</h3>
+    <h6 style="text-align: center">has requested access to your medical details for Corona virus vaccination</h6>
+    <br>
+    <div style="text-align: center">
+        <button style="margin: 5px; min-width: 90px;" class="btn btn-secondary" (click)="denyRequest()">Deny</button>
+        <button style="margin: 5px; min-width: 90px;" class="btn btn-primary" (click)="approveRequest()">Allow</button>
+    </div>
+   
+</div>
+<div *ngIf="isLoading" class="loading"></div>

@@ -1,0 +1,257 @@
+<p class="m-3">
+  <mat-icon aria-hidden="false" aria-label="Example home icon" id="nav-back" [routerLink]="['/login']">arrow_back</mat-icon>
+</p>
+
+<div class="registration-sec">
+  <div class="intro-section">
+    <div class="section1" *ngIf="step==1">
+      <img class="img-responsive intro-image" src="../../assets/Intro-Header1.png" width="55%">
+      <h5 class="text-center">Enter your Mobile Number</h5>
+      <div class="col-12 mt-3">
+        <div class="row">
+          <div class="col-4">
+            <mat-form-field>
+              <mat-select [(value)]="selectedCode">
+                <mat-option [value]="option.value" *ngFor="let option of codes">{{ option.value }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-8">
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <mat-label></mat-label>
+              <input matInput value="" type="number" placeholder="123 456 7890" [(ngModel)]="mobileNumber" autocomplete="off">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <button type="button" class="btn btn-primary primary-button" (click)="nextStep()" [disabled]="!(mobileNumber?.toString().trim().length==10)">Next</button><br>
+      </div>
+    </div>
+
+    <div class="section-2" *ngIf="step==2">
+      <img class="img-responsive intro-image" src="../../assets/1.png" width="35%">
+      <div class="p-2 mt-3">
+        <h4 class="bold text-center animate__animated animate__fadeInDown">Hi, I am Impulse!</h4>
+        <h6 class="text-center animate__animated animate__slideInUp">May I know your name please?</h6>
+        <div class="col-10 offset-1">
+          <mat-form-field class="example-full-width" style="width: 100%">
+            <mat-label></mat-label>
+            <input class="text-center" matInput value="" [(ngModel)]="name" autocomplete="off">
+          </mat-form-field>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col text-center mt-4">
+          <button type="button" class="btn btn-primary primary-button" (click)="previousStep()">Back</button><br>
+        </div>
+        <div class="col text-center mt-4">
+          <button type="button" class="btn btn-primary primary-button" (click)="nextStep()" [disabled]="!name.trim().length">Next</button><br>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section-2" *ngIf="step==3">
+      <img class="img-responsive intro-image" src="../../assets/2.png" width="35%">
+      <div class="p-2 mt-3">
+        <h4 class="bold text-center animate__animated animate__fadeInDown">Hi {{name}},</h4>
+        <h5 class="text-center animate__animated animate__slideInUp">I am your personal health manager.</h5>
+        <p class="text-center col-10 offset-1 mt-1 animate__animated animate__fadeIn animate__delay-1s" style="font-size: 10.5px;">
+           I have few questions for you to answer. It will help me to understand you better.
+        </p>
+      </div>
+      
+      <div class="row">
+        <div class="col text-center mt-4">
+          <button type="button" class="btn btn-primary primary-button" (click)="previousStep()">Back</button><br>
+        </div>
+        <div class="col text-center mt-4">
+          <button type="button" class="btn btn-primary primary-button" (click)="nextStep()">Next</button><br>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="section-2" *ngIf="step==4">
+      <p class="text-center" style="font-size: 10px;">STEP 1/5</p>
+      <div class="p-2">
+        <p class="text-center mt-2 animate__animated  animate__fade">Great!</p>
+        <h3 class="bold animate__animated animate__slideInUp text-center">First Things First</h3>
+        <h6 class="animate__animated animate__slideInUp text-center small-heading">Let's start with your login information</h6>
+        <div class="col-10 offset-1">
+          <mat-form-field class="example-full-width" style="width: 100%">
+            <mat-label>Your Email Address</mat-label>
+            <input matInput value="" placeholder="username@email.com" [(ngModel)]="email" autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="col-10 offset-1">
+          <mat-form-field class="example-full-width" style="width: 100%">
+            <mat-label>A Strong Password</mat-label>
+            <input matInput type="password" placeholder="Password" value="" [(ngModel)]="password" autocomplete="off">
+          </mat-form-field>
+        </div>
+        <p class="text-center mt-4" style="font-size: 10px; color:rgb(58, 58, 58);">These will be your login credentials for Inpulse</p>
+      </div>
+      
+      <div class="row">
+        <div class="col text-center mt-4">
+          <button type="button" class="btn btn-primary primary-button" (click)="previousStep()">Back</button><br>
+        </div>
+        <div class="col text-center mt-4">
+          <button type="button" class="btn btn-primary primary-button" (click)="nextStep()"
+          [disabled]="!(email.trim().length&&password.trim().length)">Next</button><br>
+        </div>
+      </div>
+      <img class="bcg" src="../../assets/login-bottom.png">
+    </div>
+
+
+
+    <div class="section-2" *ngIf="step==5">
+      <div class="p-2">
+        <p class="text-center" style="font-size: 10px;">STEP 2/5</p>
+        <h6 class="text-center margin-top animate__animated  animate__fade">Perfect!</h6>
+        <h4 class="bold animate__animated animate__slideInUp text-center">What's your gender?</h4>
+        <div class="row mt-4 cc-selector">
+          <div class="col-4 offset-2">
+            <input id="male" type="radio" name="gender" value="Male" [(ngModel)]="sex"/>
+          <label class="drinkcard-cc visa" for="male"></label>
+          </div>
+          <div class="col-4">
+            <input id="female" type="radio" name="gender" value="Female" [(ngModel)]="sex"/>
+            <label class="drinkcard-cc mastercard"for="female"></label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col text-center mt-4">
+          <button type="button" class="btn btn-primary primary-button" (click)="previousStep()">Back</button><br>
+        </div>
+        <div class="col text-center mt-4">
+          <button type="button" class="btn btn-primary primary-button" (click)="nextStep()" [disabled]="sex===undefined">Next</button><br>
+        </div>
+      </div>
+      <p class="text-center mt-5" style="font-size: 10px; color:rgb(58, 58, 58);">
+        If you are feeling tired now, you can answer the remaining questions anytime later :)
+      </p>
+
+      <div class="col text-center animate__animated animate__fadeIn animate__delay-2s">
+        <p style="font-size: 12px; color:rgb(148, 166, 199);" (click)="step=9; fireConfetti();">Ask me Later</p>
+      </div>
+
+      <img class="bcg" src="../../assets/login-bottom.png">
+    </div>
+
+
+    <div class="section-2" *ngIf="step==6">
+      <div class="p-2">
+        <p class="text-center" style="font-size: 10px;">STEP 3/5</p>
+        <h6 class="text-center animate__animated animate__fadeInDown margin-top">{{name}}</h6>
+        <h4 class="bold animate__animated animate__slideInUp text-center">How young are you?</h4>
+        <p class="text-center mt-1 animate__animated animate__fadeIn animate__delay-1s" style="font-size: 10.5px;">
+          Knowing your age and gender will help me in building a comprehensive health profile specifically for you!
+       </p>
+        <div class="text-center mt-4">
+          <div class="col-4 offset-4">
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <mat-label></mat-label>
+              <input class="text-center" type="number" matInput value="" [(ngModel)]="age"
+              autocomplete="off">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col text-center mt-4">
+          <button type="button" class="btn btn-primary primary-button" (click)="previousStep()">
+            Back
+          </button><br>
+        </div>
+        <div class="col text-center mt-4">
+          <button type="button" class="btn btn-primary primary-button" (click)="nextStep()"
+          [disabled]="!(3>age?.toString().trim().length)">Next</button><br>
+        </div>
+      </div>
+      <img class="bcg" src="../../assets/login-bottom.png">
+    </div>
+   
+
+    <div class="section-2" *ngIf="step==7">
+      <div class="p-2">
+        <p class="text-center" style="font-size: 10px;">STEP 4/5</p>
+        <div class="margin-top"></div>
+        <h4 class="bold animate__animated animate__slideInUp text-center">Tell me your address</h4>
+        
+        <div class="text-center mt-4">
+          <div class="col-8 offset-2">
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <mat-label></mat-label>
+              <input class="text-center" matInput value="" [(ngModel)]="address" autocomplete="off">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col text-center mt-4">
+          <button type="button" class="btn btn-primary primary-button" (click)="previousStep()">
+            Back
+          </button><br>
+        </div>
+        <div class="col text-center mt-4">
+          <button type="button" class="btn btn-primary primary-button" (click)="nextStep();"
+          [disabled]="!address.trim().length">Next</button><br>
+        </div>
+      </div>
+      <img class="bcg" src="../../assets/login-bottom.png">
+    </div>
+
+    <div class="section-2" *ngIf="step==8">
+      <div class="p-2">
+        <p class="text-center" style="font-size: 10px;">STEP 5/5</p>
+        <h6 class="text-center animate__animated animate__fadeInDown margin-top">One Last Question</h6>
+        <h4 class="bold animate__animated animate__slideInUp text-center">What do you do for living?</h4>
+        
+        <div class="text-center mt-4">
+          <div class="col-8 offset-2">
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <mat-label></mat-label>
+              <input class="text-center" matInput value="" [(ngModel)]="occupation" autocomplete="off">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col text-center mt-4">
+          <button type="button" class="btn btn-primary primary-button" (click)="previousStep()">
+            Back
+          </button><br>
+        </div>
+        <div class="col text-center mt-4">
+          <button type="button" class="btn btn-primary primary-button" (click)="nextStep(); register();"
+          [disabled]="!occupation.trim().length">Register</button><br>
+        </div>
+      </div>
+      <img class="bcg" src="../../assets/login-bottom.png">
+    </div>
+
+
+    <div class="section-2" *ngIf="step==9">
+      <img class="img-responsive intro-image" src="../../assets/1.png" width="50%">
+      <div class="p-2 mt-3">
+        <h4 class="bold animate__animated animate__slideInDown text-center">You are all set!</h4>
+        <div class="col text-center mt-4">
+          <button type="button" class="btn btn-primary primary-button animate__animated animate__fadeInUp animate__delay-2s"
+          [routerLink]="['/login']">Login to continue</button><br>
+        </div>
+    </div>
+    
+  </div>
+</div>
+
+<div *ngIf="isLoading" class="loading"></div>

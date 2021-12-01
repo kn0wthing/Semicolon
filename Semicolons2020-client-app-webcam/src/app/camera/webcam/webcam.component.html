@@ -1,0 +1,34 @@
+
+
+
+
+ 
+  
+        <!-- Basic Card Example -->
+  
+        <webcam style="height:90 vh !important;" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+          *ngIf="showWebcam" [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+          [videoOptions]="videoOptions" (cameraSwitched)="cameraWasSwitched($event)"
+          (initError)="handleInitError($event)" [imageQuality]="0.2"></webcam>
+  
+  
+ 
+  
+  
+ 
+    <div class="row text-center">
+      <div class="col-12 text-center">
+      <!-- <div class="actionBtn col-4" (click)="triggerSnapshot();" title="Take Picture"> -->
+        <mat-icon aria-hidden="false" (click)="triggerSnapshot();" class="m-3 f-32">camera_alt</mat-icon>
+      <!-- </div> -->
+      <!-- <div class="actionBtn col-4" (click)="showNextWebcam(true);" title="Switch Camera"> -->
+        <mat-icon aria-hidden="false"  (click)="showNextWebcam(true);" class="m-3 f-32">flip_camera_ios</mat-icon>
+      <!-- </div> -->
+    </div>
+    </div>
+  
+  
+  <h4 *ngIf="errors.length > 0">Messages:</h4>
+  <ul *ngFor="let error of errors">
+    <li>{{error | json}}</li>
+  </ul>

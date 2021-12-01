@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row one">
+        <img [src]="qrURL" alt="logo">
+    </div>
+    <div class="row second">
+        <div class="Name">{{ mallName }}</div>
+    </div>
+    <div class="row third">
+        <div class="col-7">
+            <span class="minor">Date</span>
+            <p class="para" style="font-size:medium;">{{ date }}</p>
+        </div>
+        <div class="col-5">
+            <span class="minor">Time</span>
+            <p class="para-2" style="font-size:medium;">{{ time }}</p>
+        </div>
+    </div>
+    <div class="row fourth">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <span class="minor" style="margin-left: 26%;">Ticket ID</span>
+            <p class="para" style="margin-left:25%;">{{ safeTag }}</p>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>

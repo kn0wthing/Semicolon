@@ -1,0 +1,42 @@
+.main-panel {
+  margin: -15px 20px 20px 20px;
+}
+
+.grey-img {
+  filter: grayscale(100%);
+}
+
+.title {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+hr{
+  margin-top: 0px !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.greet-msg{
+  font-size: 11px;
+  margin-top: 0.7rem;
+}
+
+.report-img{
+  display: block;
+  margin: auto;
+  padding-top: 0.5rem;
+}
+
+.report-card{
+  background-color: #fff;
+   border-radius: 8px; 
+   height:6rem;
+   -webkit-box-shadow: 8px 8px 38px -12px rgba(0, 0, 0, 0.15);
+   -moz-box-shadow:8px 8px 38px -12px rgba(0, 0, 0, 0.15);
+   box-shadow: 8px 8px 38px -12px rgba(0, 0, 0, 0.15);
+}
+
+.layout {
+  max-height: 100vh;
+  overflow: auto;
+}

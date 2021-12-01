@@ -1,0 +1,13 @@
+{
+  "appId": "com.psl.impulse",
+  "appName": "Impulse",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

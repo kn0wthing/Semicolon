@@ -1,0 +1,148 @@
+.registration-panel {  
+    max-height: 90vh;
+    overflow: auto;
+    margin:10px;
+    box-shadow: 2px 2px 5px -1px rgba(90, 89, 89, 0.2);
+    padding: 5px;
+    border-top: 1px solid #f9f9f9;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.panel-bottom {
+    height: 220px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+.mat-step-header .mat-step-label {
+    background-color: #3f51b5 !important;
+    color: white !important;
+    padding: 6px;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.mat-form-field {
+    width: 100% !important;
+}
+
+.registration-sec {
+    background-color: #fff;
+    height: 100vh;
+    padding: 10px
+}
+
+.intro-image{
+    display: block;
+    margin:auto;
+    margin-top:2rem;
+}
+
+#nav-back{
+    color:rgb(66, 66, 66);
+}
+
+.intro-section{
+    padding:1rem;
+}
+
+.bold{
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #4c4c4c;
+}
+
+
+section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    width: 490px;
+  }
+  
+  .example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+
+  .cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+.visa{background-image:url(../../assets/male.svg);}
+.mastercard{background-image:url(../../assets/female.svg);}
+
+.cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100px;height:70px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: grayscale(1);
+       -moz-filter: grayscale(1);
+            filter: grayscale(1);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: grayscale(.5);
+       -moz-filter: grayscale(.5);
+            filter: grayscale(.5);
+}
+
+/* Extras */
+a:visited{color:#888}
+a{color:#444;text-decoration:none;}
+
+
+.margin-top{
+    margin-top:4rem;
+}
+
+.bcg{position: absolute;
+    position: absolute;
+    bottom: 0;
+    right: auto;
+    left: 1rem;
+    width: 90%;
+    opacity: 0.3;
+    filter: grayscale(1);
+}
+
+.small-heading{
+    font-size: 0.9rem;
+    margin-bottom: 1.3rem;
+}

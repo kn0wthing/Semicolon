@@ -1,0 +1,49 @@
+<div class="container-fluid h-100">
+  <div class="row justify-content-center h-100">
+    <div class="col-md-8 col-xl-6 chat">
+      <div class="card">
+        <div class="msg_card_body" id="scroll">
+          <ul class="contact list-group" style="list-style-type: none;">
+            <li class="list-item" *ngFor="let msg of messages;let i= index">
+              <span *ngIf="i%2==0 ; then user; else chatbot"></span>
+              <ng-template #user>
+                <div class="d-flex justify-content-start mb-4">
+                  <div class="img_cont_msg">
+                    <img src="../../../assets/chatbot.png" class="rounded-circle user_img_msg">
+                  </div>
+                  <div class="msg_cotainer">
+                    {{msg}}
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template #chatbot>
+                <div class="d-flex justify-content-end mb-4">
+                  <div class="msg_cotainer_send">
+                    {{msg}}
+                  </div>
+                  <div class="img_cont_msg">
+                    <img src="../../../assets/logo_umbra.png" class="rounded-circle user_img_msg">
+                  </div>
+                </div>
+              </ng-template>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-footer">
+          <div class="input-group">
+            <input type="text" class="form-control search" style="color:grey" placeholder="Type a message"
+              [(ngModel)]="message" />
+
+            <div class="input-group-append">
+              <button class="btn btn-primary send_btn" (click)="sendMessage()"><span class="material-icons">
+                  send
+                </span></button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

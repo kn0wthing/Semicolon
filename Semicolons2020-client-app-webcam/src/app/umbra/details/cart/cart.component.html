@@ -1,0 +1,26 @@
+<h6 *ngIf="cartCount != 0" style="padding: 11px 11px 0px;" class="text-info">Cart Items</h6>
+<div class="container-fluid" style="padding:0px !important;">
+  <div class="row custom-wrapper">
+    <div class="row" style="width:100%; min-height: 100px; max-height: 330px; overflow:auto">
+      <div class="col-12 resource-section" style="display: inline;" *ngFor="let product of cartItems">
+        <div class="resource-details" style="padding:3px">
+          <label style="font-weight:600;font-size: 14px;">Item: {{ product.item }}</label><br>
+          <label class="text-success">Price: Rs. {{ product.price }} </label><br>
+          <label>Quantity: {{ cartMap.get(product) }}</label><br>
+          <label><B>Total: Rs. {{ product.price*cartMap.get(product) }}</B></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center" *ngIf="cartCount === 0">
+  <img class="text-center" src="../../../../assets/empty_cart.png"><br>
+  <h5 class="text-center text-danger">Your Cart is Empty!</h5>
+</div>
+<div>
+  <p *ngIf="cartCount != 0"
+    style="position:relative; left: 4%; font-size: medium;margin-right:7%;padding:2px;text-align: center;padding: 10px;"
+    class="card-header total">Grand Total: {{ grandTotal }}</p>
+</div>
+<button class="btn btn-primary" *ngIf="cartCount != 0" (click)="generateQRCode()"
+  style="position: absolute;left: 25%;bottom: 12%;background-color: #204486;">Proceed to Queue</button>
