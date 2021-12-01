@@ -1,63 +1,59 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ParkingComponent } from './parking/parking.component';
-import { EntrycamComponent } from './entrycam/entrycam.component';
-import { RequestApprovalComponent } from './request-approval/request-approval.component';
-import { RequestReportComponent } from './request-report/request-report.component';
-import { ApprovedRequestsComponent } from './approved-requests/approved-requests.component';
-import { RejectedRequestsComponent } from './rejected-requests/rejected-requests.component';
-import { UploadReportsComponent } from './upload-reports/upload-reports.component';
-import { LoginComponent } from './login/login.component';
+import { NgModule } from "@angular/core";
+import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent,
+    path: "login",
+    loadChildren: () =>
+      import("./login/login.module").then((m) => m.LoginPageModule),
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
+    path: "",
+    redirectTo: "login",
+    pathMatch: "full",
   },
   {
-    path: 'entrance',
-    component: ParkingComponent,
+    path: "umbra",
+    loadChildren: () =>
+      import("./umbra/umbra.module").then((m) => m.UmbraPageModule),
   },
   {
-    path: 'validate',
-    component: EntrycamComponent,
+    path: "registration",
+    loadChildren: () =>
+      import("./registration/registration.module").then(
+        (m) => m.RegistrationPageModule
+      ),
   },
   {
-    path: 'approve-request',
-    component: RequestApprovalComponent
-  },  
-  {
-    path: 'request-report',
-    component: RequestReportComponent
+    path: "approved",
+    loadChildren: () =>
+      import("./approved/approved.module").then(
+        (m) => m.ApprovedPageModule
+      ),
   },
   {
-    path: 'approved-vaccinations',
-    component: ApprovedRequestsComponent
+    path: "certificate",
+    loadChildren: () =>
+      import("./umbra/certificate/certificate-routing.module").then(
+        (m) => m.CertificatePageRoutingModule
+      ),
   },
   {
-    path: 'rejected-vaccinations',
-    component: RejectedRequestsComponent
+    path: 'approved',
+    loadChildren: () => import('./approved/approved.module').then( m => m.ApprovedPageModule)
   },
   {
-    path: 'upload-reports',
-    component: UploadReportsComponent
+    path: 'report-access',
+    loadChildren: () => import('./report-access/report-access.module').then( m => m.ReportAccessPageModule)
   },
-  {
-    path: 'login',
-    component: LoginComponent
-  }
+
+
 ];
 
 @NgModule({
-  declarations: [],
-  imports: [RouterModule.forRoot(routes), CommonModule],
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

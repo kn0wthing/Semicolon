@@ -1,0 +1,22 @@
+@media(max-width: 768px) {
+    [class*="col-"] {
+        margin-bottom: 20px;
+    }
+}
+
+.resource-section {
+    box-shadow: 2px 2px 5px -1px rgba(90, 89, 89, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f4f5f7;
+}
+
+.resource-details {
+    font-size: 12px;
+}
+
+.total{
+    background-color: #f0c14b;
+    border-color: #cba957 #bf942a #aa8326;
+    border-radius:5px 5px 5px 5px;    
+}

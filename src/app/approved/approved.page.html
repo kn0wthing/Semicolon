@@ -1,0 +1,74 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>approved</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content> -->
+
+
+<div *ngIf="!mapView" class="p-2">
+  <div class="img-center text-center margin-top">
+    <img src="../../assets/confetti.png" width="42%">
+  </div>
+  <h4 class="bold mt-2 text-center animate__animated animate__slideInUp">Wohoooo!</h4>
+  <h6 class="text-center col-10 offset-1 mt-1 animate__animated animate__slideInDown animate__delay-1s"
+  style="font-size: 12px;">
+    Your application for coronavirus has been approved.
+  </h6>
+  <div class="col-10 offset-1">
+    <hr>
+  </div>
+  <div class="col-12">
+    <p class="text-center animate__animated animate__fadeIn animate__delay-1s" style="font-size: 10.5px;">
+      Your reporting details are as mentioned below. Please report at your alloted vaccination center <br> 30 mins prior mentioned time
+    </p>
+  </div>
+ 
+  <div class="col-10 offset-1 p-2 mt-3 rounded text-center font-12 animate__animated animate__zoomInDown animate__delay-1s">
+    <p>Apollo Hospital Pune, ODP Booth No. 5 <br> Date: 8 Dec 2020 <br> Time: 11:30 AM</p>
+  </div>
+
+  <div class="row">
+    <div class="col text-center mt-4">
+      <button type="button" class="btn btn-primary primary-button font-14 animate__animated animate__slideInLeft animate__delay-2s"
+      (click)="viewMap()">View on Map</button><br>
+    </div>
+    <div class="col text-center mt-4">
+      <button type="button" class="btn btn-primary primary-button font-14 animate__animated animate__slideInRight animate__delay-2s"
+      (click)="setReminder()">Set Reminder</button><br>
+    </div>
+  </div>
+
+  <div class="col-10 offset-1 mt-4">
+    <p class="text-center" style="font-size:9px; color:rgb(83, 83, 83)0;">
+      You will receive an email regarding the medical documents that you need to carry at the vaccination center
+    </p>
+  </div>
+  
+</div>
+
+<div *ngIf="mapView">
+  <div class="shadow">
+    <p class="m-3" style="position: absolute;z-index: 9999;">
+      <button mat-mini-fab color="primary" (click)="mapView=false;">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </p>
+  </div>
+  
+  <div class="animate__animated animate__zoomIn"
+  style="height: 100vh" id="mapContainer"></div>
+  <!-- <div style="height: 20vh; color:#fff;">
+    <div class="row mt-3">
+      <div class="col text-center mt-4">
+        <button type="button" class="btn btn-primary primary-button" (click)="mapView=false;">Back</button><br>
+      </div>
+      <div class="col text-center mt-4">
+        <button type="button" class="btn btn-primary primary-button" (click)="fakeSave()">Save Location</button><br>
+      </div>
+    </div>
+  </div> -->
+</div>

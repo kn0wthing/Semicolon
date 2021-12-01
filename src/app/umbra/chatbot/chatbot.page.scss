@@ -1,0 +1,137 @@
+body,html{
+    height: 100%;
+    margin: 0;
+    background: #7F7FD5;
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+}
+
+.chat {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.card {
+    height: 500px;
+    margin-top: 5px;
+    background-color: #fff !important;
+    border: none;
+    color: black;
+}
+
+.msg_card_body {
+    max-height: 70vh;
+    overflow-y: auto;
+    background-color: #f8f9fc;
+}
+
+.card-footer {
+    position: fixed;
+    bottom: 85px;
+    width: 90%;
+    background-color: #fff;
+    border : none;
+    padding:0px;
+}
+
+.container {
+    align-content: center;
+}
+
+.search {
+    background-color: #f8f9fc!important;
+    border:2 #4e73df!important;
+}
+
+.search:focus {
+    box-shadow:none !important;
+    outline:0px !important;
+}
+
+.send_btn {
+    background-color: #204486 !important;
+    border:0 !important;
+    color: white !important;
+    cursor: pointer;
+}
+
+.user_img_msg {
+    height: 40px;
+    width: 40px;
+    border:1.5px solid #f5f6fa;
+}
+
+.img_cont_msg {
+    height: 40px;
+    width: 40px;
+}
+
+.user_info span {
+    font-size: 20px;
+    color: white;
+}
+
+.video_cam span {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.msg_cotainer {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color:#eab95ede;
+    padding: 10px;
+    position: relative;
+    font-size:12px;
+    border: 1px solid cadetblue;
+}
+
+.msg_cotainer_send {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #0295BD;
+    color:white;
+    padding: 10px;
+    position: relative;
+    font-size:12px;
+    max-width: 80% !important;
+}
+
+
+.action_menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.action_menu ul li {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+}
+
+.action_menu ul li i {
+    padding-right: 10px;
+}
+
+.action_menu ul li:hover {
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.2);
+}
+
+@media(max-width: 576px) {
+    .contacts_card{
+        margin-bottom: 15px !important;
+    }
+}
+
+.material-icons {
+    font-size: 17px;
+    vertical-align: sub;
+}

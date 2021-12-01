@@ -1,0 +1,28 @@
+<div class="row login-panel container-fluid" style="padding:0px !important;">
+  <div class="panel-top text-center" style="display: block; margin: auto; margin-bottom: 3rem;">
+    <img class="panel-top animate__animated animate__pulse animate__delay-1s" src="../../assets/logo-small.png">
+  </div>
+
+  <div class="row" class="login-content">
+    <div class="col-8 offset-2" style="margin-bottom:0px">
+      <mat-form-field class="example-full-width" style="width: 100%">
+        <mat-label>Username</mat-label>
+        <input matInput value="" [(ngModel)]="username" autocomplete="off">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" style="width: 100%">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput value="" [(ngModel)]="password">
+      </mat-form-field>
+
+      <div class="text-center mt-4">
+        <button type="button" class="btn btn-primary primary-button" (click)="login()">Login</button><br>
+        <label [routerLink]="['/registration']">Create an Account</label>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div *ngIf="isLoading" class="loading"></div>

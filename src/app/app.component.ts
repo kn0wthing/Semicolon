@@ -1,25 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from './service/api.service';
-import { Route, Router } from '@angular/router';
-import { Location } from '@angular/common';
+import { Component } from '@angular/core';
+
+import { Platform } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  title = 'social-distancing-web';
-  visible: boolean;
-  constructor(private apiService: ApiService, private router:Router, private location: Location) {
-    // this.visible = true;
-    router.events.subscribe((val) => {
-      console.log(location.path());
-      if(location.path() == '/login'){
-        this.visible = false;
-      }else {
-        this.visible = true;
-      }
+  constructor(
+    private platform: Platform,
+    private splashScreen: SplashScreen,
+    private statusBar: StatusBar
+  ) {
+    this.initializeApp();
+  }
+
+  initializeApp() {
+    this.platform.ready().then(() => {
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
     });
   }
 }

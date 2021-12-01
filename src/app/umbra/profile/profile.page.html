@@ -1,0 +1,9 @@
+<div class="card">
+  <img src="assets/profile.png" alt="John" style="width:100%">
+  <br>
+  <h3 class="title"><b>{{profile.name}}</b></h3>
+  <p>{{profile.email}}</p>
+  <p>{{profile.contact}}</p>
+  <button [routerLink]="['/umbra/qr']" class="btn btn-primary primary-button">My Queue</button>
+  <p (click)=" logout()" class="card-header total">Logout</p>
+</div>

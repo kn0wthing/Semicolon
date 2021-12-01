@@ -1,8 +1,5 @@
-<div id="wrapper">
-  <app-sidebar *ngIf="visible"></app-sidebar>
 
-  <div id="content-wrapper" class="d-flex flex-column">
-    <app-header *ngIf="visible"></app-header>
-    <router-outlet></router-outlet>
-  </div>
+<!--Custom Wrapper class wraps the router outlet in argin of 3% from all sides-->
+<div>
+  <router-outlet></router-outlet>
 </div>

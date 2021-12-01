@@ -1,0 +1,71 @@
+<div *ngIf="isLoading" class="progress" style="height: 0.5rem; border-radius: unset;">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+    aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+</div>
+
+
+<div class="container-fluid" style="padding:0px !important">
+  <h6 style="padding: 11px 11px 0px;" class="text-info">Item Details <img [routerLink]="['/umbra/cart']"
+      class="img-cart" src="../../../assets/cart.png">
+  </h6>
+  <div class="row custom-wrapper" style="margin-top: 7%;">
+    <div class="row" style="width:100%;">
+      <div class="col-12 resource-section">
+        <div class="resource-details">
+          <h6 style="font-weight:600"> {{ resource.item }}</h6>
+          <h6><label class="text-success">Price: Rs. {{ resource.price }}</label></h6>
+          <label>Quantity Available: {{ resource.quantity }}</label><br>
+          <label>Category: {{ resource.category }}</label><br>
+          <label>Address: {{resource.address }}, {{ resource.mallname }}, {{ resource.place }}<img
+              (click)="hideAndUnhideLocation()" style="height: 15px;width: 25px;"
+              src="../../assets/mapIcon.png" /></label><br>
+          <div class="text-center">
+           
+            <button *ngIf="!resource.selectedQuantity" class="btn btn-outline-primary btn-add"
+              (click)="addToCart(resource,'add')">+ Add</button>
+            <button *ngIf="resource.selectedQuantity > 0" class="btn btn-outline-primary btn-add"><span
+                style="margin-right: 10px;" (click)="addToCart(resource,'remove')">
+                -</span>{{ resource.selectedQuantity }}<span style="margin-left: 10px;"
+                (click)="addToCart(resource,'add')">+ </span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div [ngStyle]="{'display': hideLocation === false ? 'block' : 'none'}">
+    <h6 style="padding: 11px 11px 0px;" class="text-info">Location</h6>
+
+    <div style="margin: 11px 11px 11px 11px; height: 120px" id="mapContainer"></div>
+  </div>
+
+  <h6 style="padding: 11px 11px 0px;" class="text-info">You can also buy</h6>
+
+  <div class="container-fluid" style="padding:0px !important;">
+    <div class="row custom-wrapper">
+      <div class="row" style="width:100%; min-height: 100px; max-height: 210px; overflow:auto">
+        <div class="col-12 more-resource-section" style="display: inline;"
+          *ngFor="let product of productList | slice:0:10">
+
+          <div class="row">
+            <div class="col-8">
+              <h6 style="font-weight:600;font-size: 14px;"> {{ product.item }} <label>at &nbsp;</label> <label
+                  class="text-success"> Rs. {{ product.price }}</label> </h6>
+              <label>Quantity Available: {{ product.quantity }}</label>
+            </div>
+            <div class="col-4">
+              <button *ngIf="!product.selectedQuantity" class="btn btn-outline-primary btn-add"
+                (click)="addToCart(product,'add')">+ Add</button>
+              <button *ngIf="product.selectedQuantity > 0" class="btn btn-outline-primary btn-add"><span
+                  style="margin-right: 10px;" (click)="addToCart(product,'remove')">
+                  -</span>{{ product.selectedQuantity }}<span style="margin-left: 10px;"
+                  (click)="addToCart(product,'add')">+ </span></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="main-sec">
+  <div class="data-panel">
+    <h6 style="padding: 11px 11px 0px;" class="text-info">Your recent travelling history in last one month</h6>
+    <mat-vertical-stepper *ngIf="dataLoaded" style="background-color:#f5f5f536" [linear]="false" #stepper>
+      <mat-step>
+        <ng-template class="stepper-header" matStepLabel>Dmart</ng-template>
+        <label class="text-success">Visited on : </label><label>{{ timeLine['Dmart'][0]['timeline'] }}</label><br>
+        <label class="text-warning">Current Containment zones</label>
+        <span style="margin-left: 5px;" class="badge badge-primary">{{ currentCases[0] }}</span>
+        <div>
+          <button type="button" class="btn btn-primary primary-button" matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template class="stepper-header" matStepLabel>Reliance</ng-template>
+        <label class="text-success">Visited on : </label><label>{{ timeLine['Reliance'][0]['timeline'] }}</label><br>
+        <label class="text-warning">Current Containment zones</label>
+        <span style="margin-left: 5px;" class="badge badge-primary">{{ currentCases[1] }}</span>
+        <div>
+          <button type="button" class="btn btn-primary primary-button" matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template class="stepper-header" matStepLabel>More</ng-template>
+        <label class="text-success">Visited on : </label><label>{{ timeLine['More'][0]['timeline'] }}</label><br>
+        <label class="text-warning">Current Containment zones</label>
+        <span style="margin-left: 5px;" class="badge badge-primary">{{ currentCases[2] }}</span>
+        <div>
+          <button type="button" class="btn btn-primary primary-button" matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template class="stepper-header" matStepLabel>Big Bazar</ng-template>
+        <label class="text-success">Visited on : </label><label>{{ timeLine['Big Bazar'][0]['timeline'] }}</label><br>
+        <label class="text-warning">Current Containment zones</label>
+        <span style="margin-left: 5px;" class="badge badge-primary">{{ currentCases[3] }}</span>
+        <div>
+          <button type="button" class="btn btn-primary primary-button" matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template class="stepper-header" matStepLabel>HyberMart</ng-template>
+        <label class="text-success">Visited on : </label><label>{{ timeLine['HyberMart'][0]['timeline'] }}</label><br>
+        <label class="text-warning">Current Containment zones</label>
+        <span style="margin-left: 5px;" class="badge badge-primary">{{ currentCases[4] }}</span>
+      </mat-step>
+    </mat-vertical-stepper>
+  </div>
+
+  <div style="display: block;">
+    <canvas baseChart width="400" height="400" [datasets]="lineChartData" [labels]="lineChartLabels"
+      [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
+      [plugins]="lineChartPlugins">
+    </canvas>
+  </div>
+</div>
