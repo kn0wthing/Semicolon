@@ -1,0 +1,65 @@
+(COVID-19 QUALITATIVE REAL TIME PCR
+_SARS-CoV-2 VIRUS DETECTION BY REAL TIME PCR
+
+
+Primary Sample:Nasopharyngeal and Oropharyngeal swab in Viral Transport Media.
+
+
+Methodology: This is a qualtative amplification assay for the detection of the RNA ofSARS-CoV? in respiratory samples. The lab is using FDA/ CE-
+1VD] ICMR approved Real Time PCR assay.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Result:
+[TEST NAME JRESULTS
+|COVID-19 Virus QUALITATIVE REAL TIME PCR [POSITIVE
+Interpretation:
+
+
+
+
+
+Positive [RNA specific to SARS-CoV-2 Detected
+[Negative RNA specific to SARS-CoV-2 Not Detected
+InconclusivelThis could be due to low viral load in the sample. A repeat sample is recommended]
+
+
+
+
+
+‘Background: Several coronaviruses can infect humans, theglobally endemic human coronaviruses HCoV-229E HCoV-NL63, HCoV-HKUL and
+HCOV-OC43 thattend to cause mild respiratory disease, and thezoonatic Middle East respiratory syndromecoronavius (MERS-CoV) and severe
+acuterespiratory syndrome coronavirus (SARS-CoV) thathave a higher case fatality rate. In December 2019,a cluster of patents with a novel
+‘Coronavirus wasidentfied in Wuhan, China. Initially tentativelynamed 2019 novel coronavirus (2019-nCoV),thevirus has now been named SARS-
+CCoV-2 by thelnternational Committee of Taxonomy of Viruses (ICTV). Ths virus can cause the disease namedcoronavirus disease 2019 (COVID-
+19). WHO refersto the virus as COVID-19 virus in ts curentdocumentation.
+
+
+References: 1.Laboratory testing for corona virus disease2019 (COVID-19) in suspected human cases. WHO interim guidance 2" March, 2020.
+
+
+Note:
+4 ICMR Registration number for Covid-19 is SUDPLOOL
+
+
+21 Negative result does not rule out the possiblity of covi-19 infection. Presence of inhibitors, mutations and ineuficient RNA specific to SARS-
+ee nn ne ee
+
+
+
+
+
